@@ -95,17 +95,32 @@ MongoClient.connect(connectionUrl,{useNewUrlParser:true},(error,result)=>{
         ])
         .then(result => console.log(result.ops))
         .catch(error => console.log('Something went wrong while inserting !'))
-    
-   db.collection('users').findOne({name:'test name 1'},(error,result)=>{
+
+    /**
+     * findOne
+     * using callback
+     */
+    db.collection('users').findOne({name:'test name 1'},(error,result)=>{
        if(error){
            return console.log('Unable to find the item ! Something went wrong');
        }
        console.log(result);
    });
-
+   /**
+    * findOne
+    * using promises
+    */
    db.collection('users').findOne({name:'test name 1'})
    .then(result => console.log(result))
    .catch(error => console.log('Unable to find the item ! Something went wrong'));
+
+   db.collection('users').find({age:'test age 2'}).toArray((error,result)=>{
+    if(error){
+        return console.log("Something went wrong !");
+    }
+    console.log(result);
+    
+   })
    
         
 });
