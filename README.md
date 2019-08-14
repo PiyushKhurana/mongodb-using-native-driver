@@ -1,1 +1,1 @@
-## the repo will be updated soon. 
+## mongoDB connection and CRUD operations using MongoDB Node.JS Native Driver

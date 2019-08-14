@@ -1,0 +1,22 @@
+{
+  "name": "mongodb-using-native-driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiyushKhurana/mongodb-using-native-driver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PiyushKhurana/mongodb-using-native-driver/issues"
+  },
+  "homepage": "https://github.com/PiyushKhurana/mongodb-using-native-driver#readme",
+  "dependencies": {
+    "mongodb": "^3.2.7"
+  }
+}
