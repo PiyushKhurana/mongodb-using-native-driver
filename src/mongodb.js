@@ -40,7 +40,7 @@ MongoClient.connect(connectionUrl,{useNewUrlParser:true},(error,result)=>{
      * InsertOne
      * Using Promise 
      */
-    
+
     db.collection('users').insertOne({
         name:'test name 2',
         age:'test age 2',
@@ -50,5 +50,53 @@ MongoClient.connect(connectionUrl,{useNewUrlParser:true},(error,result)=>{
     .then(result => console.log(result.ops))
     .catch(error => console.log('Something went wrong while inserting !'));
     
+    /**
+     * InsertMany
+     * Using Callback 
+     */
+    
+    db.collection('users').insertMany(
+        [
+            {
+                name:'test name 3',
+                age:'test age 3',
+                email:'Test3@test.com',
+                address:'test address 3'
+            },
+            {
+                name:'test name 4',
+                age:'test age 4',
+                email:'Test4@test.com',
+                address:'test address 4'
+            }
+        ],(error,result)=>{
+            if(error){
+                return console.log('Something went wrong while inserting !');
+            }
+            console.log(result.ops);
+    });
 
+    /**
+     * InsertMany
+     * Using Promise 
+     */
+    db.collection('users').insertMany(
+        [
+            {
+                name:'test name 3',
+                age:'test age 3',
+                email:'Test3@test.com',
+                address:'test address 3'
+            },
+            {
+                name:'test name 4',
+                age:'test age 4',
+                email:'Test4@test.com',
+                address:'test address 4'
+            }
+        ])
+        .then(result => console.log(result.ops))
+        .catch(error => console.log('Something went wrong while inserting !'))
+           
+    
 });
